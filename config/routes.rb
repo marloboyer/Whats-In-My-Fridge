@@ -7,4 +7,12 @@ Rails.application.routes.draw do
   get "/items" => "items#index"
 
   post "/items" => "items#create"
+
+  patch "/items/:id" => "items#update"
+
+  delete "/items/:id" => "items#destroy"
+
+  post "/users" => "users#create"
+
+  post "/sessions" => "sessions#create"
 end

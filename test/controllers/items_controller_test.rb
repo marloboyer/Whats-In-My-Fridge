@@ -15,4 +15,20 @@ class ItemsControllerTest < ActionDispatch::IntegrationTest
       assert_response 200
     end
   end
+
+  test "update" do
+    item = Item.first
+    patch "/items/#{item.id}.json", params: { name: "Updated name" }
+    assert_response 200
+
+    data = JSON.parse(response.body)
+    assert_equal "Updated name", data["name"]
+  end
+
+  test "destroy" do
+    assert_difference "Item.count", -1 do
+      delete "/items/#{Item.first.id}.json"
+      assert_response 200
+    end
+  end
 end
