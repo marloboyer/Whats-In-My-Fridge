@@ -1,1 +1,49 @@
-POST http://localhost
+### Index 
+GET http://localhost:3000/items.json?category=Fridge 
+
+### Show 
+GET http://localhost:3000/items/2.json
+
+### Create
+POST http://localhost:3000/items.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2Nzg4Mzg1MTF9.3yOx9Cif23ool3gme4Ap1KwuE34kq4ZJ5VY1GtEp9rg
+Content-Type: application/json
+
+{"name": "Apple",
+"category": 2,
+"lives_at": "nvwkg",
+"best_by": "Makes your skin smooth"
+}
+
+### Update 
+PATCH http://localhost:3000/items/4.json 
+Content-Type: application/json
+
+{"name":"Ice",
+"category": "3",
+"lives_at": "dfsd",
+"best_by": "Frozen water"
+}
+
+
+
+### Delete
+DELETE http://localhost:3000/items/3.json
+
+
+### User Create (aka Sign-Up)
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{"name": "Bo Boyer",
+"email": "boboyer@test.com",
+"password": "password",
+"password_confirmation": "password"
+}
+
+### Session Create (aka Login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{"email": "boboyer@test.com",
+"password": "password"}
